@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Himanshu Computer Institute </title>
+    <style>
+        :root{
+            --primary:#2c3e50;
+            --accent:#f1c40f;
+            --light:#ecf0f1;
+        }
+        body {
+            font-family: 'segoe UI',Tahoma,Genewa,Verdana,sans-serif;
+            background-color: #f4f7f6;
+            margin:0;
+            padding:20px;
+        }
+        header {
+            text-align: center;
+            background: var(--primary);
+            color: whitesmoke;
+            padding:2rem;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .course-card {
+            background: #f4f7f6;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--accent);
+        }
+        .course-container {
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap:20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .course-card:hover {
+            transform:translateY(-5px);
+        }
+        .course-header {
+            background: #fdfdfd;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color:var(--primary);
+            border-bottom: 1px solid #eee;
+        }
+        .course-body {
+            padding: 20px;
+        }
+        .course-body ul {
+            list-style: none;
+            padding: 0;
+            margin:0;
+        }
+        .course-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f9f9f9;
+            font-size: 0.95rem;
+            color:#555;
+        }
+        .course-body li::before {
+            content:"";
+            color:var(--accent);
+        }
+        .btn-link {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color:#eee;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn-link:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Himanshu. Computer Institute</h1>
+        <p class="tagline"></p>
+        <p>Mind is a Weapon an my weapon is always a loaded</p>
+    </header>
+    <div class="course-container">
+        <div class="course-card">
+            <div class="course-header">BASIC COMPUTER COURSE</div>
+            <div class="course-body">
+                <ul>
+                    <li>Introduction to Computer</li>
+                    <li>paint,Notepad,wordpad</li>
+                    <li>MS office(Word excel,power point)</li>
+                    <li>Basic IOT</li>
+                </ul>
+                <a href="#" class="btn-link">View full syllabus</a>
+            </div>
+        </div>
+            <div class="course-card">
+            <div class="course-header">CCC</div>
+            <div class="course-body">
+                <ul>
+                    <li>Operating system,</li>
+                    <li>LibreOffice(Writter,calc,,impress)</li>
+                    <li>cyber security & Future skills</li>
+                    <li>50 Mock test series</li>
+                </ul>
+                <a href="#" class="btn-link">Enroll Now</a>
+            </div>
+    </div>
+            <div class="course-card">
+            <div class="course-header">C & C++ Programming</div>
+            <div class="course-body">
+                <ul>
+                    <li>Data types & Variables</li>
+                    <li>OOPS concept</li>
+                    <li>Inheritance & Polymorphism</li>
+                    <li>Templates & STL</li>
+                </ul>
+                <a href="#" class="btn-link">Explore coding</a>
+                </div>
+                </div>
+                <div class="course-card">
+            <div class="course-header">JAVA Programming</div>
+            <div class="course-body">
+                <ul>
+                    <li>JVM Architecture</li>
+                    <li>Packages & interfaces</li>
+                    <li>Multithreading & JDBC</li>
+                    <li>Servlets & JSP overview</li>
+                </ul>
+                <a href="#" class="btn-link">Learn JAVA</a>
+                </div>
+                </div>
+                <div class="course-card">
+            <div class="course-header">PYTHON Programming</div>
+            <div class="course-body">
+                <ul>
+                    <li>Syntax & indentation</li>
+                    <li>Lists,Tuples & Dictionaries</li>
+                    <li>File I/O operations</li>
+                    <li>Numpy & Pandas</li>
+                </ul>
+                <a href="#" class="btn-link">Start Data Science</a>
+                </div>
+                </div>
+                <div class="course-card">
+            <div class="course-header">TALLT PRIME(GST)</div>
+            <div class="course-body">
+                <ul>
+                    <li>Chart of Accounts</li>
+                    <li>Voucher Entry & Inventory</li>
+                    <li>GST complaince</li>
+                    <li>BRS</li>
+                </ul>
+                <a href="#" class="btn-link">Accounting Details</a>
+                </div>
+                </div>
+            <div class="course-card">
+            <div class="course-header">ADOBE PHOTOSHOP</div>
+            <div class="course-body">
+                <ul>
+                    <li>Layer Management</li>
+                    <li>Image Editing & Retouching</li>
+                    <li>Masking & Blending Modes</li>
+                    <li>Removing Backgrounds</li>
+                </ul>
+                <a href="#" class="btn-link">Graphics Design</a>
+                <a href="https://wa.me/9758860268?text=Hello Sir ,I am interested in computer courses."class="whatsapp-btn" target="_blank">Contact me on whatsapp
+                     Click Here..</a>
+                </div>
+            </div>
+                </div>
+</body>
+</html>
