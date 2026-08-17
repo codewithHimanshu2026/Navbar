@@ -36,3 +36,10 @@ a{
 a:hover{
     border: 2px solid yellow;
 }
+
+@media (max-width:640px) {
+    .navbar{
+        background-color: green;
+        
+    }
+}
