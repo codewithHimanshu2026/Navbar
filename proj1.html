@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #eee;
+        }
+        .chessboard {
+            width:480px;
+            height: 480px;
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+            grid-template-rows: repeat(8, 1fr);
+            border:4px solid #333;
+        }
+        .white{background:#f0d9b5;}
+        .black{background: #b58863;}
+        .square{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+        }
+        .square.drag-over{
+            outline:2px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <div class="chessboard" id="board"></div>
+    <script>
+        const board=document.getElementById("board");
+        const pieces=[
+            "♜","♞","♝","♛","♚","♝","♞","♜",
+            "♙","♙","♙","♙","♙","♙","♙","♙",
+            "","","","","","","","",
+            "","","","","","","","",
+            "","","","","","","","",
+            "","","","","","","","",
+            "♙","♙","♙","♙","♙","♙","♙","♙",
+            "♜","♞","♝","♛","♚","♝","♞","♜"
+        ];
+        
+        // create 64 squares
+        for(let i=0;i<64;i++){
+            const square=document.createElement("div");
+            square.classList.add("square");
+            const row=Math.floor(i/8);
+            const col=i%8;
+            if((row+col)%2===0){
+                square.classList.add("white");
+            }
+            else{
+                square.classList.add("black");
+            }
+            square.textContent=pieces[i];
+            square.setAttribute("draggable",true);
+
+            // drag events
+            square.addEventListener("dragstart",e=>{
+                e.dataTransfer.setData("text/plain",i);
+            });
+
+            square.addEventListener("dragover",e=>{
+                e.preventDefault();
+                square.classList.add("drag-over");
+            });
+
+            square.addEventListener("dragleave",()=>{
+                square.classList.remove("drag-over");
+            })
+
+            square.addEventListener("drop", e=>{
+                e.preventDefault();
+                square.classList.remove("drag-over");
+                const fromindex=e.dataTransfer.getData("text/plain");
+                const fromSquare=board.children[fromindex];
+
+                // move piece
+                square.textContent=fromSquare.textContent;
+                fromSquare.textContent="";
+            });
+            board.appendChild(square);
+        } 
+    </script>
+</body>
+</html>
